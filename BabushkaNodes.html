@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>BabushkaNodes</title>
+	<meta name="description" content="The infinite graph editor">
+	<meta name="author" content="Marko Bakšić">
+
+	<link rel="stylesheet" href="BabushkaNodes.css?v=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="BabushkaNodes.js"></script> 
+	<script src="Content.js"></script> 
+	<script src="Node.js"></script> 
+	<script src="BasicNode.js"></script> 
+	<script src="Tools.js"></script> 
+	<script src="Controller.js"></script> 
+</head>
+
+<body>
+	<header>
+		<div name="mainTitle" id="mainTitle">
+			BabushkaNodes
+		</div>
+		<button type="button" name="clearCanvas" id="clearCanvas">Clear canvas</button>
+	</header>
+
+	<div name="grid" id="grid">
+		<div name="toolbox" id="toolbox">
+			<button type="button" name="editTool" id="editTool">E</button>
+			<button type="button" name="nodeTool" id="nodeTool">N</button>
+			<button type="button" name="connectionTool" id="connectionTool">C</button>
+		</div>
+
+		<div name="canvasWrapper" id="canvasWrapper">
+			<canvas name="graphCanvas" id="graphCanvas">
+				Your browser does not support the canvas element.
+			</canvas>
+		</div>
+	</div>
+
+	<footer>
+		This is a footer.
+	</footer>
+</body>
+</html>

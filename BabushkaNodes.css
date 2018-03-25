@@ -1,0 +1,133 @@
+
+body {
+	background: #272822;
+	color: #c0c0c0;
+	margin: 0 0 0 0;
+
+	font-family: monospace;
+}
+
+header {
+	background: #373832;
+	padding: 5pt;
+	box-shadow: 2pt 2pt 5pt rgba(0, 0, 0, 0.5);
+	position: relative;
+	z-index: 100;
+}
+
+#mainTitle {
+	font-size: 16pt;
+	text-align: center;
+}
+
+#clearCanvas {
+	position: absolute;
+	top: 0;
+	right: 5pt;
+	height: 20pt;
+}
+
+#toolbox {
+	background: #444640;
+	padding: 10pt;
+	box-shadow: 2pt 2pt 5pt rgba(0, 0, 0, 0.5);
+
+	position: fixed;
+	width: 140pt;
+	height: 100%;
+	z-index: 50;
+}
+
+#canvasWrapper {
+	position: absolute;
+	left: 160pt;
+	height: calc(100% - 47pt);
+	width: calc(100% - 160pt);
+}
+
+canvas {
+	/*border: 1pt dashed yellow;*/
+	height: 100%;
+	width: 100%;
+	z-index : 1000;
+}
+
+footer {
+	background: #373832;
+	padding: 5pt;
+	box-shadow: 2pt 2pt 5pt rgba(0, 0, 0, 0.5);
+
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 10pt;
+	z-index: 74;
+}
+
+/* Material buttons */
+button {
+  display: inline-block;
+  height: 26pt;
+  min-width: 42pt;
+  padding: 6pt 16pt;
+  line-height: 0.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border:0;
+  border-radius: 2pt;
+  background: #36A9BF;
+  color:#272822;
+  outline:0;
+
+  box-shadow: 2pt 2pt 5pt rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+  overflow: hidden;
+  position: relative;
+}
+
+button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120pt;
+  height: 120pt;
+  margin-left: -60pt;
+  margin-top: -60pt;
+  background: rgba(255,255,255,0.3);
+  border-radius: 100%;
+  transform: scale(0);
+}
+
+@keyframes button {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+button:not(:active):after {
+  animation: button 0.6s ease-out;
+}
+
+button:after {
+  visibility: hidden;
+}
+
+button:focus:after {
+  visibility: visible;
+}
